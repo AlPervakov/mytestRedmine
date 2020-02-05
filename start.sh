@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Install core system packages
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
