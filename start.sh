@@ -1,8 +1,8 @@
 #!/bin/bash
 # Install core system packages
 export DEBIAN_FRONTEND=noninteractive
-apt-get update
-apt-get install -y mysql-server libmysqlclient-dev git-core subversion imagemagick libmagickwand-dev libcurl4-openssl-dev ruby-full dirmngr gnupg
+apt update
+apt install -y mysql-server curl libmysqlclient-dev git-core subversion imagemagick libmagickwand-dev libcurl4-openssl-dev ruby-full dirmngr gnupg
 
 # Installing Passenger + Nginx
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
