@@ -3,8 +3,6 @@
 export DEBIAN_FRONTEND=noninteractive
 apt update
 apt install -y mysql-server curl libmysqlclient-dev git-core subversion imagemagick libmagickwand-dev libcurl4-openssl-dev ruby-full dirmngr gnupg
-gem install bundler
-bundle install --without development test
 
 # Installing Passenger + Nginx
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
@@ -26,7 +24,7 @@ curl -O https://raw.githubusercontent.com/AlPervakov/mytestRedmine/master/passen
 curl -O https://raw.githubusercontent.com/AlPervakov/mytestRedmine/master/redmine
 
 # Set up Redmine
-cp /tmp/database.yml //var/data/redmine/config/database.yml
+cp /tmp/database.yml /var/data/redmine/config/database.yml
 cd /var/data/redmine
 gem install bundler --no-ri --no-rdoc
 bundle install
@@ -38,6 +36,7 @@ cp /tmp/passenger.conf /etc/nginx/passenger.conf
 cp /tmp/nginx.conf /etc/nginx/nginx.conf
 cp /tmp/redmine /etc/nginx/sites-available/redmine
 ln -s /etc/nginx/sites-available/redmine /etc/nginx/sites-enabled/redmine
+rm /etc/nginx/sites-enabled/default
 
 # Set up database
 service mysql start
