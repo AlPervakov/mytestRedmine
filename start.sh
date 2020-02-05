@@ -21,10 +21,10 @@ svn co https://svn.redmine.org/redmine/branches/4.0-stable redmine
 
 # Download configuration files
 cd /tmp/
-wget https://github.com/AlPervakov/mytestRedmine/blob/master/nginx.conf
-wget https://github.com/AlPervakov/mytestRedmine/blob/master/database.yml
-wget https://github.com/AlPervakov/mytestRedmine/blob/master/passenger.conf
-wget https://github.com/AlPervakov/mytestRedmine/blob/master/redmine
+curl -O https://raw.githubusercontent.com/AlPervakov/mytestRedmine/master/nginx.conf
+curl -O https://raw.githubusercontent.com/AlPervakov/mytestRedmine/master/database.yml
+curl -O https://raw.githubusercontent.com/AlPervakov/mytestRedmine/master/passenger.conf
+curl -O https://raw.githubusercontent.com/AlPervakov/mytestRedmine/master/redmine
 
 # Set up Redmine
 cp /tmp/database.yml //var/data/redmine/config/database.yml
