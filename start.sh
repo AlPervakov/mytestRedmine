@@ -1,4 +1,4 @@
 #!/bin/bash
 service mysql start
 service nginx start
-/usr/sbin/nginx
+tail -F /var/log/nginx/error.log
