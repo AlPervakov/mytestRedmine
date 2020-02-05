@@ -1,10 +1,9 @@
 #!/bin/sh
 # Install core system packages
-export DEBIAN_FRONTEND=noninteractive #убираем все всплывающие окна при установках
+export DEBIAN_FRONTEND=noninteractive
 apt update
 apt install -y mysql-server curl libmysqlclient-dev git-core subversion imagemagick \
 libmagickwand-devlibcurl4-openssl-dev ruby-full dirmngr gnupg
-
 gem install bundler
 bundle install --without development test
 
@@ -22,10 +21,10 @@ svn co https://svn.redmine.org/redmine/branches/4.0-stable redmine
 
 # Download configuration files
 cd /tmp/
-curl -O https://github.com/AlPervakov/mytestRedmine/blob/master/nginx.conf
-curl -O https://github.com/AlPervakov/mytestRedmine/blob/master/database.yml
-curl -O https://github.com/AlPervakov/mytestRedmine/blob/master/passenger.conf
-curl -O https://github.com/AlPervakov/mytestRedmine/blob/master/redmine
+wget https://github.com/AlPervakov/mytestRedmine/blob/master/nginx.conf
+wget https://github.com/AlPervakov/mytestRedmine/blob/master/database.yml
+wget https://github.com/AlPervakov/mytestRedmine/blob/master/passenger.conf
+wget https://github.com/AlPervakov/mytestRedmine/blob/master/redmine
 
 # Set up Redmine
 cp /tmp/database.yml //var/data/redmine/config/database.yml
