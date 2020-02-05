@@ -2,8 +2,7 @@
 # Install core system packages
 export DEBIAN_FRONTEND=noninteractive
 apt update
-apt install -y mysql-server curl libmysqlclient-dev git-core subversion imagemagick \
-libmagickwand-devlibcurl4-openssl-dev ruby-full dirmngr gnupg
+apt install -y mysql-server curl libmysqlclient-dev git-core subversion imagemagick libmagickwand-dev libcurl4-openssl-dev ruby-full dirmngr gnupg
 gem install bundler
 bundle install --without development test
 
