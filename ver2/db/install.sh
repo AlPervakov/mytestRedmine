@@ -3,7 +3,7 @@
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get install -y mysql-server
-apt-get install libopenssl-ruby1.8 ruby-full
+apt-get install ruby-full
 RAILS_ENV=production rake db:migrate
 
 service mysql start
