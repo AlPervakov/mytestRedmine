@@ -2,9 +2,7 @@
 # Install core system packages
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
-apt-get install -y mysql-server
-apt-get install ruby-full
-
+apt-get install -y mysql-server ruby-full
 
 service mysql start
 sleep 2
