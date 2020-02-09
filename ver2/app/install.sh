@@ -37,6 +37,8 @@ cp /tmp/nginx.conf /etc/nginx/nginx.conf
 cp /tmp/redmine /etc/nginx/sites-available/redmine
 ln -s /etc/nginx/sites-available/redmine /etc/nginx/sites-enabled/redmine
 rm /etc/nginx/sites-enabled/default
+service nginx stop
+service nginx start
 
 cd /var/data/redmine
 rake generate_secret_token
