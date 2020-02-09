@@ -1,0 +1,14 @@
+server {
+    listen *:8080;
+    server_name localhost;
+
+    access_log /var/log/nginx/test.log;
+    error_log /var/log/nginx/test.log;
+    
+
+    location / {
+        proxy_pass       app:80;
+        proxy_set_header Host      $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
