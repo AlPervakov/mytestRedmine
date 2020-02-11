@@ -1,3 +1,7 @@
+upstream redmine {
+  server app:80;
+}
+
 server {
     server_name localhost;
     listen *:8080;
@@ -6,7 +10,7 @@ server {
     error_log /var/log/nginx/test.log;
 
     location / {
-        proxy_pass       app:80;
+        proxy_pass       http://redmine;
         proxy_set_header Host      $host;
         proxy_set_header X-Real-IP $remote_addr;
     }
